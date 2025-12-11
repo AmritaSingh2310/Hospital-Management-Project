@@ -1,0 +1,17 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+<div class="dashboard">
+    <h1> Doctor Dashboard</h1>
+    <div class="card">
+        <h2>Welcome, Dr. {{ user.username }}!</h2>
+        <p><strong>Role:</strong> {{ profile.get_role_display }}</p>
+        <p><strong>Joined:</strong> {{ profile.created_at|date:"M d, Y" }}</p>
+    </div>
+    <div class="card">
+        <h3>Quick Actions</h3>
+        <a href="#" class="btn"> Set Availability</a>
+        <a href="#" class="btn"> View Bookings</a>
+    </div>
+    <a href="{% url 'accounts:logout' %}" class="btn"> Logout</a>
+</div>
+{% endblock %}
